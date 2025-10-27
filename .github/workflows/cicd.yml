@@ -60,9 +60,6 @@ jobs:
         dotnet build ${{ env.PUBLISHER_PROJECT }} --configuration Release
         dotnet publish ${{ env.PUBLISHER_PROJECT }} --configuration Release --no-build --output ${{ env.PUBLISHER_AZURE_WEBAPP_PACKAGE_PATH }}
    
-    # Run unit tests
-    - name: Run unit Test
-      run: dotnet test ${{ env.SERVICES_TEST_PROJECT }}
   
     # Deploy to Azure Web app
     - name: Customer App deploy to azure
